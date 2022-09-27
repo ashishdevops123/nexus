@@ -62,21 +62,13 @@
          src: 'nexus.service'
          dest: /etc/systemd/system/nexus.service
          owner: nexus   
-       notify:
-         - enabling daemon, restarting
-     - name: Force all notified handlers to run at this point, not waiting for normal sync points
-       meta: flush_handlers
      - name: ensuring service started
        systemd:
          name: 'nexus.service'
          state: started
-   handlers:     
-     - name: enabling daemon, restarting
-       systemd:
-         name: 'nexus.service'
          daemon_reload: yes
          enabled: yes
-         state: restarted    
+            
          
      
         
