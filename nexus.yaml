@@ -30,6 +30,7 @@
        user:
          name: nexus
          state: present
+         recurse: yes
      - name: Change file ownership, group and permissions
        file:
          path: /opt/nexus
