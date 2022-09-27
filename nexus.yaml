@@ -30,6 +30,8 @@
        user:
          name: nexus
          state: present
+         create_home: yes
+         home: /opt
          recurse: yes
      
         
