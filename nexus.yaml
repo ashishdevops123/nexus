@@ -38,7 +38,7 @@
          state: present 
      - name: Change file ownership, group and permissions
        file:
-         path: {{ item }}
+         path: '{{ item }}'
          owner: nexus
          group: nexus
          mode: 755
