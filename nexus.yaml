@@ -50,6 +50,14 @@
          src: 'nexus.rc'
          dest: /opt/nexus/nexus-3.41.1-01/bin/nexus.rc
          owner: nexus  
+     - name: creating asymlink
+       file:
+         src: /opt/nexus/nexus-3.41.1-01/bin/nexus
+         dest: /etc/init.d/nexus
+         owner: nexus
+         group: nexus
+         state: link
+            
          
      
         
