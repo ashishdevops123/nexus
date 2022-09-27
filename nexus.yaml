@@ -65,9 +65,9 @@
      - name: ensuring service started
        systemd:
          name: 'nexus.service'
-         state: started
          daemon_reload: yes
          enabled: yes
+         state: started
             
          
      
