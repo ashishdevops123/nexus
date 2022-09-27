@@ -26,7 +26,7 @@
          src: /opt/nexus-3.41.1-01
          dest: /opt/nexus
          remote_src: yes
-     - name: Remove the user 'johnd'
+     - name: creating a user nexus
        user:
          name: nexus
          state: present
@@ -35,7 +35,7 @@
          path: /opt/nexus
          owner: /opt/sonatype-work
          user: nexus
-     -     
+          
         
 
 
