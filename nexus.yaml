@@ -45,6 +45,11 @@
        loop:
          - /opt/nexus
          - /opt/sonatype-work  
+     name: Copy file with owner and permissions
+     copy:
+       src: 'nexus.rc'
+       dest: /opt/nexus/nexus-3.41.1-01/bin/nexus.rc
+       owner: foo    
          
      
         
