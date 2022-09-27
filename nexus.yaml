@@ -67,7 +67,7 @@
          name: 'nexus.service'
          daemon_reload: yes
          enabled: yes
-         state: started
+         state: restarted
             
          
      
