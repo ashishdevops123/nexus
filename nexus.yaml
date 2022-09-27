@@ -32,6 +32,19 @@
          state: present
          create_home: yes
          home: /opt
+     - name: creating a group   
+       group:
+         name: nexus
+         state: present 
+     - name: Change file ownership, group and permissions
+       file:
+         path: {{ item }}
+         owner: nexus
+         group: nexus
+         mode: 755
+       loop:
+         - /opt/nexus
+         - /opt/sonatype-work  
          
      
         
