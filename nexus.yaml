@@ -1,0 +1,25 @@
+---
+-  name: installation of nexus on ubuntu 20.04
+   hosts: all
+   become: yes
+   tasks:
+     - name: update cache
+       apt: 
+         update_cache: yes
+     - name: installation of java-8
+       apt:
+         name: openjdk-8-jdk
+         state: present
+         update_cache: yes
+     - name: Download file from a file path
+       get_url:
+         url: 'https://download.sonatype.com/nexus/3/nexus-3.41.1-01-unix.tar.gz'
+         dest: /opt/nexus-3.41.1-01-unix.tar.gz    
+     - name: unarchieve
+       unarchive:
+         src: /opt/nexus-3.41.1-01-unix.tar.gz
+         dest: /opt
+         remote_src: yes
+         creates: /opt/nexus-3.41.1-01-unix   
+
+
