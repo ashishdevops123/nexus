@@ -21,5 +21,21 @@
          dest: /opt
          remote_src: yes
          creates: /opt/nexus-3.41.1-01-unix   
+     - name: rename to nexus
+       copy:
+         src: /opt/nexus-3.41.1-01
+         dest: /opt/nexus
+         remote_src: yes
+     - name: Remove the user 'johnd'
+       user:
+         name: nexus
+         state: present
+     - name: Change file ownership, group and permissions
+       file:
+         path: /opt/nexus
+         owner: /opt/sonatype-work
+         user: nexus
+     -     
+        
 
 
