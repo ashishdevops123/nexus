@@ -21,11 +21,6 @@
          dest: /opt
          remote_src: yes
          creates: /opt/nexus-3.41.1-01-unix   
-     - name: rename to nexus
-       copy:
-         src: /opt/nexus-3.41.1-01
-         dest: /opt/nexus
-         remote_src: yes
      - name: creating a user nexus
        user:
          name: nexus
@@ -43,16 +38,16 @@
          group: nexus
          mode: 755
        loop:
-         - /opt/nexus
+         - /opt/nexus-3.41.1-01
          - /opt/sonatype-work  
      - name: changing nexus.rc file
        copy:
          src: 'nexus.rc'
-         dest: /opt/nexus/nexus-3.41.1-01/bin/nexus.rc
+         dest: /opt/nexus-3.41.1-01/bin/nexus.rc
          owner: nexus  
      - name: creating asymlink
        file:
-         src: /opt/nexus/nexus-3.41.1-01/bin/nexus
+         src: /opt/nexus-3.41.1-01/bin/nexus
          dest: /etc/init.d/nexus
          owner: nexus
          group: nexus
